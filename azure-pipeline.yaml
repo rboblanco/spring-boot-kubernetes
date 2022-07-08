@@ -29,16 +29,29 @@ stages:
           projectKey: 'rboblanco_spring-boot-kubernetes'
           projectName: 'rboblanco'
         displayName: 'Preparing Sonarqube Environment'
-    
-      - task: Gradle@3
-        inputs:
-          gradleWrapperFile: 'gradlew'
-          tasks: "sonarqube"
-          javaHomeOption: 'JDKVersion'
-          sonarQubeRunAnalysis: true
-          sqGradlePluginVersionChoice: 'specify'
-          sonarQubeGradlePluginVersion: '3.3'
-        displayName: 'Analyze current Branch'
+        
+      -task: Maven@3
+       inputs:
+         mavenPomFile: 'pom.xml'
+         publishJUnitResults: true
+         testResultsFiles: '**/surefire-reports/TEST-*.xml'
+         javaHomeOption: 'JDKVersion'
+         MavenVersionOption: 'Default'
+         MavenAuthenticateFeed: false
+         effetivePomSkip: false
+         sonarQubeRunAnalysis: true
+         sqMavenpluginVersionChoice:'lastest' 
+          
+                     
+         ## - task: Gradle@3
+      #  inputs:
+         # gradleWrapperFile: 'gradlew'
+         # tasks: "sonarqube"
+          #javaHomeOption: 'JDKVersion'
+          #sonarQubeRunAnalysis: true
+          #sqGradlePluginVersionChoice: 'specify'
+         # sonarQubeGradlePluginVersion: '3.3'
+      #  displayName: 'Analyze current Branch'
     
   
       - task: SonarCloudPublish@1
