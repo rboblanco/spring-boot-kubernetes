@@ -1,20 +1,18 @@
  pool:
   vmImage: ubuntu-latest
 stages:
-- stage: Build 
-  jobs:
+
+jobs:  
   - job: build
     displayName: 'Build'
     steps:
-    - task: Gradle@3
+    - task: Maven@3
       inputs:
-        gradleWrapperFile: 'gradlew'
-        tasks: 'build'
+        mavenPomFile: 'pom.xml'
         publishJUnitResults: true
         testResultsFiles: '**/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
-        sonarQubeRunAnalysis: false
-        spotBugsAnalysis: false          
+        sonarQubeRunAnalysis: false           
 
   
   - job: sonar
