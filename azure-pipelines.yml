@@ -15,9 +15,9 @@
        sonarQubeRunAnalysis: false           
 
   
-  - job: sonar
-    workspace:
-      clean: all
+- job: sonar
+  workspace:
+    clean: all
     displayName:  Code Review
     steps:
   
