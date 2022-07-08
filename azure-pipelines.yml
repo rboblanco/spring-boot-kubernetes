@@ -30,16 +30,16 @@
       
       
    - task: Maven@3
-    inputs:
+     inputs:
       mavenPomFile: 'pom.xml'
-      publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      javaHomeOption: 'JDKVersion'
-      MavenVersionOption: 'Default'
-      MavenAuthenticateFeed: false
-      effetivePomSkip: false
-      sonarQubeRunAnalysis: true
-      sqMavenpluginVersionChoice:'lastest' 
+       publishJUnitResults: true
+       testResultsFiles: '**/surefire-reports/TEST-*.xml'
+       javaHomeOption: 'JDKVersion'
+       MavenVersionOption: 'Default'
+       MavenAuthenticateFeed: false
+       effetivePomSkip: false
+       sonarQubeRunAnalysis: true
+       sqMavenpluginVersionChoice:'lastest' 
           
                      
          ## - task: Gradle@3
