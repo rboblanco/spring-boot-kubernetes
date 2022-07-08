@@ -15,12 +15,13 @@
        sonarQubeRunAnalysis: false           
 
   
- - job: sonar
-   workspace:
+  - job: sonar
+    workspace:
       clean: all
-   displayName:  Code Review
-   steps:
-   - task: SonarCloudPrepare@1
+    displayName:  Code Review
+    steps:
+  
+  - task: SonarCloudPrepare@1
      inputs:
        SonarCloud: 'tarea4-devsecops'
        organization: 'rboblanco'
