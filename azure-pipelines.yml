@@ -1,18 +1,17 @@
  pool:
-  vmImage: ubuntu-latest
-stages:
+   vmImage: ubuntu-latest
 
-jobs:  
-  - job: build
-    displayName: 'Build'
-    steps:
-    - task: Maven@3
-      inputs:
-        mavenPomFile: 'pom.xml'
-        publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        sonarQubeRunAnalysis: false           
+ jobs:  
+ - job: build
+   displayName: 'Build'
+   steps:
+   - task: Maven@3
+     inputs:
+       mavenPomFile: 'pom.xml'
+       publishJUnitResults: true
+       allowBrokenSymlinks: testResultsFiles: '**/TEST-*.xml'
+       javaHomeOption: 'JDKVersion'
+       sonarQubeRunAnalysis: false           
 
   
   - job: sonar
