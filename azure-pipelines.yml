@@ -9,7 +9,8 @@
      inputs:
        mavenPomFile: 'pom.xml'
        publishJUnitResults: true
-       allowBrokenSymlinks: testResultsFiles: '**/TEST-*.xml'
+       allowBrokenSymlinks: 
+       testResultsFiles: '**/TEST-*.xml'
        javaHomeOption: 'JDKVersion'
        sonarQubeRunAnalysis: false           
 
