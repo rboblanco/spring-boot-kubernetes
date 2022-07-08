@@ -29,8 +29,9 @@ stages:
           projectKey: 'rboblanco_spring-boot-kubernetes'
           projectName: 'rboblanco'
         displayName: 'Preparing Sonarqube Environment'
-        
-      -task: Maven@3
+      
+      
+      - task: Maven@3
        inputs:
          mavenPomFile: 'pom.xml'
          publishJUnitResults: true
