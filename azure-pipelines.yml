@@ -1,4 +1,4 @@
-pool:
+ pool:
   vmImage: ubuntu-latest
 stages:
 - stage: Build 
